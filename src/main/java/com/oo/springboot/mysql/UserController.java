@@ -1,7 +1,7 @@
 package com.oo.springboot.mysql;
 
-import com.oo.springboot.mysql.jpa.StudentJPA;
-import com.oo.springboot.mysql.model.StudentEntity;
+import com.oo.springboot.mysql.jpa.UserJPA;
+import com.oo.springboot.mysql.model.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(value="/student")
-public class StudentController {
+@RequestMapping(value="/user")
+public class UserController {
 
     @Autowired
-    private StudentJPA studentJpa;
+    private UserJPA userJPA;
 
 
     /**
@@ -22,11 +22,11 @@ public class StudentController {
      * @Date 17:07 2018/6/29
      * @Param []
      * @return java.util.List<com.oo.springboot.mysql.model.StudentEntity>
-     *     http://localhost:8080/student/all
+     *     http://localhost:8080/user/all
      **/
     @RequestMapping(value="/all")
-    public List<StudentEntity> selectAll(){
-        return studentJpa.findAll();
+    public List<UserEntity> selectAll(){
+        return userJPA.findAll();
     }
 
 
@@ -36,11 +36,11 @@ public class StudentController {
      * @Date 13:45 2018/7/2
      * @Param [entity]
      * @return com.oo.springboot.mysql.model.StudentEntity
-     * http://localhost:8080/student/save?name=oo&score_avg=23&score_sum=45&age=4
+     * http://localhost:8080/user/save?name=oo&address=23&age
      **/
     @RequestMapping(value="/save")
-    public StudentEntity save(StudentEntity entity){
+    public UserEntity save(UserEntity entity){
 
-        return studentJpa.save(new StudentEntity("o1oo","34","45",22));
+        return userJPA.save(entity);
     }
 }
