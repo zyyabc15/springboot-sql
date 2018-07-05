@@ -10,7 +10,7 @@ import java.io.Serializable;
  * @Param 
  * @return 
  **/
-@Entity
+@Entity(name = "t_user")
 @Table(name = "t_user")
 public class UserEntity implements Serializable
 {

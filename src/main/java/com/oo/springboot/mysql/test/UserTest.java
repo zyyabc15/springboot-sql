@@ -25,6 +25,7 @@ import org.springframework.web.context.WebApplicationContext;
 @SpringBootTest
 
 public class UserTest {
+
     /**
      * 模拟mvc测试对象
      */
@@ -65,5 +66,34 @@ public class UserTest {
         Assert.assertNotNull(mvcResult.getResponse().getContentAsString());
         System.out.println(mvcResult.getResponse().getContentAsString());
     }
+    @Test
+    public void testAge() throws Exception{
+        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/user/byAge")
+        .param("age","20")
+        .param("name","12")).andReturn();
+//        Assert.assertNotNull(mvcResult.getResponse().getContentAsString());
+        System.out.println(mvcResult.getResponse().getContentAsString());
+    }
 
+    @Test
+    public void byName() throws Exception{
+        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/user/byName")
+                .param("name","12")).andReturn();
+//        Assert.assertNotNull(mvcResult.getResponse().getContentAsString());
+        System.out.println(mvcResult.getResponse().getContentAsString());
+    }
+    @Test
+    public void testDelByName() throws Exception{
+        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/user/delByName")
+                .param("name","oo1")).andReturn();
+//        Assert.assertNotNull(mvcResult.getResponse().getContentAsString());
+        System.out.println(mvcResult.getResponse().getContentAsString());
+    }
+    @Test
+    public void testCutPage() throws Exception{
+        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/user/cutPage")
+                ).andReturn();
+//        Assert.assertNotNull(mvcResult.getResponse().getContentAsString());
+        System.out.println(mvcResult.getResponse().getContentAsString());
+    }
 }
