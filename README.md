@@ -15,11 +15,11 @@
 
 ```
  <dependency>
- 			<groupId>log4j</groupId>
- 			<artifactId>log4j</artifactId>
- 			<version>1.2.16</version>
- 			<scope>compile</scope>
- 		</dependency>       
+    <groupId>log4j</groupId>
+    <artifactId>log4j</artifactId>
+    <version>1.2.16</version>
+    <scope>compile</scope>
+ </dependency>       
 ```
 在配置文件中手动实例化DruidDataSource
 详见DruidConfiguration配置
