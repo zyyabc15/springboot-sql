@@ -21,3 +21,7 @@
  		</dependency>       
 ```
 在配置文件中手动实例化DruidDataSource
+详见DruidConfiguration配置
+
+# QueryDSL与SpringDataJPA共同服务于SpringBoot
+参考[QueryDSL与SpringDataJPA共同服务于SpringBoot](https://www.jianshu.com/p/7379173e1970)
